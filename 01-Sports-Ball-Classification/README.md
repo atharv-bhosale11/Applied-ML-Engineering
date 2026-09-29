@@ -5,7 +5,7 @@ A Machine Learning classification project that predicts whether a sports ball is
 This project demonstrates the implementation of a **Decision Tree Classifier** using Scikit-Learn for supervised machine learning classification tasks.
 
 ---
-
+ 
 ## 🚀 Project Objective
 
 The objective of this project is to classify sports balls using:
