@@ -194,5 +194,6 @@ def main():
 
     DisplayFooter()
 
+# Application Entry Point
 if __name__ == "__main__":
     main()
