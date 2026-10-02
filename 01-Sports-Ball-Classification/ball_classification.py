@@ -3,10 +3,28 @@ from sklearn import tree
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
 
+"""
+Function Name : DisplayData
+Description   : Displays the title of Sports Ball Classification Case Study.
+Input         : None
+Output        : Prints project header on console.
+Author        : Atharv Tushar Bhosale
+Date          : 02/10/2026
+"""
+
 def DisplayData():
     print("------------------------------------------------------------")
     print("---------- Sports Ball Classification Case Study -----------")
     print("------------------------------------------------------------")
+
+"""
+Function Name : LoadDataSet
+Description   : Loads sports ball dataset containing features and labels.
+Input         : None
+Output        : Returns X and Y datasets.
+Author        : Atharv Tushar Bhosale
+Date          : 02/10/2026
+"""
 
 def LoadDataSet():
     X = [[35,1],[47,1],[90,0],[48,1],[90,0],[35,1],
@@ -16,6 +34,15 @@ def LoadDataSet():
     Y = [1,1,2,1,2,1,2,1,1,1,2,1,2,1,2]
 
     return X,Y
+
+"""
+Function Name : PreparedData
+Description   : Splits dataset into training and testing datasets.
+Input         : None
+Output        : Returns Xtrain, Xtest, Ytrain and Ytest.
+Author        : Atharv Tushar Bhosale
+Date          : 02/10/2026
+"""
 
 def PreparedData():
     Xtrain = [[35,1],[47,1],[90,0],[48,1],[90,0],
@@ -30,6 +57,15 @@ def PreparedData():
 
     return Xtrain,Xtest,Ytrain,Ytest
 
+"""
+Function Name : TrainModel
+Description   : Trains Decision Tree Classifier using training data.
+Input         : Xtrain, Ytrain
+Output        : Returns trained machine learning model.
+Author        : Atharv Tushar Bhosale
+Date          : 02/10/2026
+"""
+
 def TrainModel(Xtrain,Ytrain):
 
     model = tree.DecisionTreeClassifier()
@@ -37,6 +73,15 @@ def TrainModel(Xtrain,Ytrain):
     trainedmodel = model.fit(Xtrain,Ytrain)
 
     return trainedmodel
+
+"""
+Function Name : TestModel
+Description   : Tests trained model and calculates prediction accuracy.
+Input         : Model, Xtest, Ytest
+Output        : Returns accuracy score.
+Author        : Atharv Tushar Bhosale
+Date          : 02/10/2026
+"""
 
 def TestModel(model,Xtest,Ytest):
 
@@ -46,11 +91,29 @@ def TestModel(model,Xtest,Ytest):
 
     return accuracy
 
+"""
+Function Name : PredictBall
+Description   : Predicts sports ball category using trained model.
+Input         : Trained model
+Output        : Returns predicted ball type.
+Author        : Atharv Tushar Bhosale
+Date          : 02/10/2026
+"""
+
 def PredictBall(model):
 
     Result = model.predict([[35,1]])
 
     return Result
+
+"""
+Function Name : DisplayResult
+Description   : Displays predicted ball category on console.
+Input         : Prediction result
+Output        : Prints Tennis Ball or Cricket Ball.
+Author        : Atharv Tushar Bhosale
+Date          : 02/10/2026
+"""
 
 def DisplayResult(Result):
 
@@ -58,6 +121,15 @@ def DisplayResult(Result):
         print("Tennis Ball")
     elif Result[0] == 2:
         print("Cricket Ball")
+
+"""
+Function Name : main
+Description   : Controls complete machine learning workflow.
+Input         : None
+Output        : Displays prediction and model accuracy.
+Author        : Atharv Tushar Bhosale
+Date          : 02/10/2026
+"""
 
 def main():
     DisplayData()
