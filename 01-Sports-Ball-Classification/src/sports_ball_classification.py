@@ -29,7 +29,12 @@ Date                :   02/10/2026
 ------------------------------------------------------------
 """
 
+# Machine Learning Library Imports
+
+# Used to create and train Decision Tree Classification model
 from sklearn import tree
+
+# Used to calculate prediction accuracy 
 from sklearn.metrics import accuracy_score
 
 """
