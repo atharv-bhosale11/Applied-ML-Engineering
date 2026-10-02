@@ -152,6 +152,20 @@ def DisplayResult(Result):
         print("Cricket Ball")
 
 """
+Function Name : DisplayFooter
+Description   : Displays project completion message.
+Input         : None
+Output        : Prints project footer on console.
+Author        : Atharv Tushar Bhosale
+Date          : 02/10/2026
+"""
+
+def DisplayFooter():
+    print("------------------------------------------------------------")
+    print("Sports Ball Classification Case Study Completed Successfully")
+    print("------------------------------------------------------------")        
+
+"""
 Function Name : main
 Description   : Controls complete machine learning workflow.
 Input         : None
@@ -161,6 +175,7 @@ Date          : 02/10/2026
 """
 
 def main():
+    
     DisplayData()
 
     X,Y = LoadDataSet()
@@ -176,6 +191,8 @@ def main():
     DisplayResult(Result)
 
     print("Accuracy is  : ",accuracy * 100,"%")
+
+    DisplayFooter()
 
 if __name__ == "__main__":
     main()
