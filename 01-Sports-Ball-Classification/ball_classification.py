@@ -1,7 +1,36 @@
-import pandas as pd
+"""
+------------------------------------------------------------
+Project Name        : Sports Ball Classification
+
+Dataset Information :
+
+Surface Encoding    :   Rough  = 1
+                        Smooth = 0
+
+Ball Type Encoding  :    Tennis Ball  = 1
+                        Cricket Ball = 2
+
+Features            :   Weight  -> Weight of Ball (grams)
+                        Surface -> Surface Type
+
+Target              :   Ball Type
+
+Machine Learning Information:
+
+Algorithm Used      :   Decision Tree Classifier
+
+Library             :   Scikit-Learn
+
+Problem Type        :   Classification
+
+Author              :   Atharv Tushar Bhosale
+
+Date                :   02/10/2026
+------------------------------------------------------------
+"""
+
 from sklearn import tree
 from sklearn.metrics import accuracy_score
-from sklearn.model_selection import train_test_split
 
 """
 Function Name : DisplayData
