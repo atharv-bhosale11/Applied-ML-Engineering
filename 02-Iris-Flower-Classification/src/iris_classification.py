@@ -8,7 +8,7 @@ from sklearn.metrics import accuracy_score, classification_report
  
 """
 Function Name : DisplayData
-Description   : Displays project header.
+Description   : Displays project header. 
 Input         : None
 Output        : Prints project title.
 Author        : Atharv Tushar Bhosale
