@@ -1,56 +1,32 @@
 # Iris Flower Classification
 
-## Overview 
- 
-This project implements Iris Flower Classification using Machine Learning algorithms. The dataset is preprocessed, analyzed, and used to train classification models for predicting iris flower species.
+A Machine Learning project that classifies Iris flowers into different species using K-Nearest Neighbors (KNN) and Decision Tree classifiers.
 
-## Dataset 
+## Project Overview
 
-The Iris dataset contains the following features:
+This project demonstrates the complete Machine Learning workflow, including data preprocessing, feature selection, model training, evaluation, and visualization using the Iris dataset.
 
-- Sepal Length (cm)
-- Sepal Width (cm)
-- Petal Length (cm)
-- Petal Width (cm)
+## Features
 
-Target Variable:
-
-- Setosa
-- Versicolor
-- Virginica
+- Data Loading and Preprocessing
+- Missing Value Analysis
+- Statistical Summary
+- Class Distribution Analysis
+- Label Encoding
+- Train-Test Split
+- KNN Classification
+- Decision Tree Classification
+- Model Comparison
+- Classification Reports
+- Confusion Matrix Visualization
+- Accuracy Comparison Graph
 
 ## Technologies Used
 
 - Python
 - Pandas
-- Scikit-Learn
-
-## Machine Learning Models
-
-- K-Nearest Neighbors (KNN)
-- Decision Tree Classifier
-
-## Project Workflow
-
-1. Load Dataset
-2. Data Cleaning
-3. Missing Value Analysis
-4. Statistical Summary
-5. Class Distribution Analysis
-6. Label Encoding
-7. Feature and Target Preparation
-8. Train-Test Split
-9. Model Training
-10. Model Evaluation
-11. Model Comparison
-
-## Performance Metrics
-
-- Accuracy Score
-- Classification Report
-  - Precision
-  - Recall
-  - F1-Score
+- Scikit-learn
+- Matplotlib
 
 ## Project Structure
 
@@ -58,23 +34,15 @@ Target Variable:
 02-Iris-Flower-Classification/
 │
 ├── data/
-│   ├── iris.csv
-│   └── README.md
+│   └── iris.csv
 │
 ├── src/
-│   ├── iris_classification.py
-│   └── README.md
+│   └── iris_classification.py
 │
 ├── screenshots/
-│   ├── output1.png
-│   ├── output2.png
-│   ├── output3.png
-│   └── README.md
+│   ├── output_1.png
+│   ├── output_2.png
+│   └── output_3.png
 │
 ├── requirements.txt
 └── README.md
-```
-
-## Author
-
-Atharv Tushar Bhosale
