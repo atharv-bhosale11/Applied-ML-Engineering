@@ -1,57 +1,32 @@
-# Iris Flower Classification
+# iris_classification.py
 
-## Overview
-This project implements Iris Flower Classification using Machine Learning algorithms. The dataset is analyzed, preprocessed, and used to train classification models for predicting iris flower species.
+This module implements the Iris Flower Classification Case Study using Machine Learning.
 
-## Dataset
-The project uses the famous Iris Dataset containing the following features:
+## Features
 
-- Sepal Length (cm)
-- Sepal Width (cm)
-- Petal Length (cm)
-- Petal Width (cm)
+- Load and preprocess Iris dataset
+- Remove unwanted columns
+- Check missing values
+- Display statistical summary
+- Display class distribution
+- Encode target variable using LabelEncoder
+- Split dataset into training and testing sets
+- Train K-Nearest Neighbors (KNN) model
+- Train Decision Tree model
+- Compare model performance
+- Generate classification reports
+- Display confusion matrices
+- Visualize model accuracy comparison
 
-Target Variable:
-- Setosa
-- Versicolor
-- Virginica
+## Models Used
 
-## Technologies Used
+- K-Nearest Neighbors (KNN)
+- Decision Tree Classifier
 
-- Python
-- Pandas
-- Scikit-Learn
+## Output
 
-## Machine Learning Algorithms
-
-### K-Nearest Neighbors (KNN)
-Used for classification based on nearest neighboring samples.
-
-### Decision Tree Classifier
-Used for classification by creating decision rules from the dataset.
-
-## Project Workflow
-
-1. Load Dataset
-2. Remove Unwanted Columns
-3. Check Missing Values
-4. Display Statistical Summary
-5. Display Class Distribution
-6. Encode Target Variable
-7. Prepare Features and Labels
-8. Split Dataset into Training and Testing Sets
-9. Train KNN Model
-10. Train Decision Tree Model
-11. Compare Model Performance
-12. Generate Classification Reports
- 
-## Performance Metrics
-
-- Accuracy Score
-- Classification Report
-  - Precision
-  - Recall
-  - F1-Score
-
-## Project Structure
-
+- Model Accuracy
+- Classification Reports
+- Best Performing Model
+- Confusion Matrix Graphs
+- Accuracy Comparison Graph
