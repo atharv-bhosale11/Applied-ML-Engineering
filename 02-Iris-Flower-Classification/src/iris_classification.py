@@ -1,14 +1,15 @@
 import pandas as pd
-
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score, classification_report
- 
+import matplotlib.pyplot as plt
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
+
 """
 Function Name : DisplayData
-Description   : Displays project header. 
+Description   : Displays project header.
 Input         : None
 Output        : Prints project title.
 Author        : Atharv Tushar Bhosale
@@ -235,7 +236,7 @@ def CompareModels(KNNModel, DTModel, X_test, Y_test, le):
     ))
 
     print("\nClassification Report (Decision Tree)")
-    print(classification_report(
+    print(classification_report( 
     Y_test,
     DTPrediction,
     target_names=le.classes_
@@ -247,6 +248,59 @@ def CompareModels(KNNModel, DTModel, X_test, Y_test, le):
         print("Best Model : Decision Tree")
     else:
         print("Both Models Perform Equally")
+
+"""
+Function Name : DisplayGraphs
+Description   : Displays confusion matrix and model accuracy comparison.
+Input         : Models, X_test, Y_test
+Output        : Graphical representation.
+Author        : Atharv Tushar Bhosale
+Date          : 05/10/2026
+"""
+
+def DisplayGraphs(KNNModel, DTModel, X_test, Y_test):
+
+    KNNPrediction = KNNModel.predict(X_test)
+    DTPrediction = DTModel.predict(X_test)
+
+    KNNAccuracy = accuracy_score(Y_test, KNNPrediction)
+    DTAccuracy = accuracy_score(Y_test, DTPrediction)
+
+    # KNN Confusion Matrix
+    cm_knn = confusion_matrix(Y_test, KNNPrediction)
+
+    ConfusionMatrixDisplay(
+        confusion_matrix=cm_knn,
+        display_labels=["setosa", "versicolor", "virginica"]
+    ).plot()
+
+    plt.title("KNN Confusion Matrix")
+    plt.show()
+
+    cm_dt = confusion_matrix(Y_test, DTPrediction)
+
+    ConfusionMatrixDisplay(
+        confusion_matrix=cm_dt,
+        display_labels=["setosa", "versicolor", "virginica"]
+    ).plot()
+
+    plt.title("Decision Tree Confusion Matrix")
+    plt.show()
+
+    Models = ["KNN", "Decision Tree"]
+    Accuracy = [KNNAccuracy * 100, DTAccuracy * 100]
+
+    plt.figure(figsize=(6, 4))
+    plt.bar(Models, Accuracy)
+
+    plt.title("Model Accuracy Comparison")
+    plt.xlabel("Models")
+    plt.ylabel("Accuracy (%)")
+
+    for i, value in enumerate(Accuracy):
+        plt.text(i, value + 0.5, f"{value:.2f}%", ha='center')
+
+    plt.show()
 
 
 """
@@ -315,6 +369,13 @@ def main():
         X_test,
         Y_test,
         le
+    )
+
+    DisplayGraphs(
+    KNNModel,
+    DTModel,
+    X_test,
+    Y_test
     )
 
     print()
