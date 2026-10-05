@@ -5,7 +5,7 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score, classification_report
-
+ 
 """
 Function Name : DisplayData
 Description   : Displays project header.
