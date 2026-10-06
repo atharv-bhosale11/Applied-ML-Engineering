@@ -1,3 +1,44 @@
+"""
+------------------------------------------------------------
+Project Name        : Iris Flower Classification
+
+Dataset Information :
+
+Dataset File        : data/iris.csv (150 Samples)
+
+Species Encoding    : Setosa     = 0
+                      Versicolor = 1
+                      Virginica  = 2
+
+Features            : Sepal Length (cm)
+                      Sepal Width (cm)
+                      Petal Length (cm)
+                      Petal Width (cm)
+
+Target              : Species of the Iris Flower
+
+Machine Learning Information :
+
+Algorithms Used     : K-Nearest Neighbors (KNN)
+                      Decision Tree Classifier
+
+Library             : Scikit-Learn
+
+Problem Type        : Multi-Class Classification
+ 
+Evaluation Metrics  : Accuracy Score
+                      Classification Report
+                      Confusion Matrix
+
+Visualization       : Confusion Matrix
+                      Model Accuracy Comparison Graph
+
+Author              : Atharv Tushar Bhosale
+
+Date                : 05/10/2026
+------------------------------------------------------------
+"""
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
