@@ -1,37 +1,35 @@
 """
 ------------------------------------------------------------
-Project Name        : Iris Flower Classification
+Project Name        : Advertising Sales Prediction
 
 Dataset Information :
 
-Dataset File        : data/iris.csv (150 Samples)
+Dataset File        : data/Advertising.csv (200 Samples)
 
-Species Encoding    : Setosa     = 0
-                      Versicolor = 1
-                      Virginica  = 2
+Features            : TV Advertising Budget
+                      Radio Advertising Budget
+                      Newspaper Advertising Budget
 
-Features            : Sepal Length (cm)
-                      Sepal Width (cm)
-                      Petal Length (cm)
-                      Petal Width (cm)
-
-Target              : Species of the Iris Flower
+Target              : Product Sales
 
 Machine Learning Information :
-
-Algorithms Used     : K-Nearest Neighbors (KNN)
-                      Decision Tree Classifier
+ 
+Algorithm Used      : Linear Regression
 
 Library             : Scikit-Learn
 
-Problem Type        : Multi-Class Classification
- 
-Evaluation Metrics  : Accuracy Score
-                      Classification Report
-                      Confusion Matrix
+Problem Type        : Regression
 
-Visualization       : Confusion Matrix
-                      Model Accuracy Comparison Graph
+Evaluation Metrics  : Mean Squared Error (MSE)
+                      Root Mean Squared Error (RMSE)
+                      R² Score
+
+Visualization       : Actual vs Predicted Sales Plot
+                      Correlation Matrix Analysis
+
+Model Output        : Feature Coefficients
+                      Intercept Value
+                      Sales Prediction
 
 Author              : Atharv Tushar Bhosale
 
