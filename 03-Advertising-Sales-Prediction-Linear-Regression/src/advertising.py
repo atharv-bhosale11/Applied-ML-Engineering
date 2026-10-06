@@ -104,6 +104,7 @@ Date          : 05/10/2026
 
 def DisplayCorrelationMatrix(df):
 
+    print("Correlation Matrix")
     print(df.corr())
 
 """
@@ -243,6 +244,12 @@ def PlotActualVsPredicted(Y_test, Y_pred):
 
     plt.scatter(Y_test, Y_pred)
 
+    plt.plot(
+    [Y_test.min(), Y_test.max()],
+    [Y_test.min(), Y_test.max()],
+    'r--'
+    )
+
     plt.xlabel("Actual Sales")
     plt.ylabel("Predicted Sales")
     plt.title("Actual Sales vs Predicted Sales")
@@ -315,7 +322,7 @@ def main():
     print(Border)
 
     DisplayModelCoefficients(model, X)
-    print(Border)
+    print(Border) 
 
     CompareActualVsPredicted(Y_test, Y_pred)
     print(Border)
