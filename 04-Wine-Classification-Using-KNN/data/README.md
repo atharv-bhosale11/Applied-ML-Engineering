@@ -6,7 +6,7 @@ This folder contains the dataset used for the Wine Classification project.
 
 - Dataset Name: Wine Dataset
 - File Name: Wine.csv
-- Total Samples: 178
+- Total Samples: 178 
 - Total Features: 13
 - Target Classes: 3
 
