@@ -1,5 +1,5 @@
 # 🍷 Wine Classification Using K-Nearest Neighbors (KNN)
-
+ 
 ## 📌 Project Overview
 
 This project implements a Machine Learning Classification model using the **K-Nearest Neighbors (KNN)** algorithm to classify different types of wine based on their chemical properties.
