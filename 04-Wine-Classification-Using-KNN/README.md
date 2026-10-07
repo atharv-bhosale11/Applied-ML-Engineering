@@ -136,14 +136,16 @@ Provides a graphical representation of model predictions versus actual classific
 │   └── WineClassificationUsingKNN.py
 │
 ├── screenshots
+│   ├── output1.png
+│   ├── output2.png
+│   ├── output3.png
+│   ├── output4.png
 │   ├── K_Value_vs_Accuracy.png
 │   └── Confusion_Matrix.png
 │
 ├── requirements.txt
 └── README.md
 ```
-
----
 
 ## ⚙ Installation
 
