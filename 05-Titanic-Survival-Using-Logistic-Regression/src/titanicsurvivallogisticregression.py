@@ -1,6 +1,6 @@
 """
 ------------------------------------------------------------
-Project Name        : Titanic Survival Prediction
+Project Name        : Titanic Survival Prediction 
 
 Dataset Information :
 
