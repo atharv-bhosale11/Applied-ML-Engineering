@@ -4,7 +4,7 @@ This folder contains the trained Machine Learning model used for the Titanic Sur
 
 ## Model Information
 
-- **Model Name:** Titanic Logistic Regression Model
+- **Model Name:** Titanic Logistic Regression Model 
 - **File Name:** `TitanicLogisticRegression.pkl`
 - **Algorithm:** Logistic Regression
 - **Problem Type:** Binary Classification
