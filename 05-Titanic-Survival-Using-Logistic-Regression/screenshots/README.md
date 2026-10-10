@@ -30,12 +30,54 @@ Displays the number of passengers who survived and did not survive.
 - `0` → Did Not Survive
 - `1` → Survived
 
+### 4. Output 1
+
+**File Name:** `Output1.png`
+
+Displays the first terminal output generated during the execution of the Titanic Survival Prediction project.
+
+### 5. Output 2
+
+**File Name:** `Output2.png`
+
+Displays the second terminal output generated during the execution of the project.
+
+### 6. Output 3
+
+**File Name:** `Output3.png`
+
+Displays the third terminal output generated during the execution of the project.
+
+### 7. Output 4
+
+**File Name:** `Output4.png`
+
+Displays the fourth terminal output generated during the execution of the project.
+
+### 8. Output 5
+
+**File Name:** `Output5.png`
+
+Displays the fifth terminal output generated during the execution of the project.
+
+### 9. Output 6
+
+**File Name:** `Output6.png`
+
+Displays the sixth terminal output generated during the execution of the project.
+
 ## Screenshots
 
 ```text
 screenshots/
-│
+│ 
 ├── Confusion_Matrix.png
 ├── Distribution Graph.png
 ├── Count Graph.png
+├── output 1.png
+├── output 2.png
+├── output 3.png
+├── output 4.png   
+├── output 5.png
+├── output 6.png
 └── README.md
