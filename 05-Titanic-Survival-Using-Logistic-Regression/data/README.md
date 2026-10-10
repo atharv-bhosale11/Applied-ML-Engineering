@@ -36,7 +36,7 @@ The dataset is used for:
 The dataset is processed before training the Logistic Regression model.
 
 The preprocessing workflow includes:
-
+ 
 1. Loading the dataset
 2. Cleaning the data
 3. Handling missing values
