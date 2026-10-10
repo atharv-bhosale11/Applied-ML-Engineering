@@ -9,7 +9,7 @@ This folder contains the dataset used for the Titanic Survival Prediction projec
 - Target Variable: Survived
 - Problem Type: Binary Classification
 - Algorithm Used: Logistic Regression
-
+ 
 ## Dataset Description
 
 The dataset contains passenger-related information that can be used to predict whether a passenger survived the Titanic disaster.
