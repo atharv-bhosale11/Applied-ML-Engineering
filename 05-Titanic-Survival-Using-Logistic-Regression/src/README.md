@@ -4,7 +4,7 @@ This folder contains the Python source code used for the Titanic Survival Predic
 
 ## Source File
 
-**File Name:** `TitanicSurvivalUsingLogisticRegression.py`
+**File Name:** `titanicsurvivallogisticregression.py`
 
 ## Description
 
