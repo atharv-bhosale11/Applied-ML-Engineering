@@ -194,10 +194,6 @@ Where:
 - **46** → Incorrectly predicted as did not survive.
 - **27** → Correctly predicted as survived.
 
-## 📊 Visualizations
-
-The project generates the following visualizations.
-
 ### 1. Survival Count
 
 Displays the number of passengers who survived and did not survive.
@@ -312,10 +308,6 @@ Target Variable    : Survived
 ```
 
 The program continues with dataset information, missing value analysis, preprocessing, model training, predictions, accuracy, confusion matrix, visualizations, and project summary.
-
-## 📸 Output Screenshots
-
-The generated screenshots are available in the `screenshots` folder.
 
 ### Survival Count
 
