@@ -371,37 +371,74 @@ Date          : 05/10/2026
 
 def main():
 
-    Border = "--"*50
+    Border = "--" * 50
 
     DataPath = "iris.csv"
 
     DisplayData()
-    
+
+    print(Border)
+    print("Step 1 : Load Dataset")
+    print(Border)
+
     df = LoadDataSet(DataPath)
+
+    print(Border)
+    print("Step 2 : Remove Unwanted Columns")
     print(Border)
 
     df = RemoveUnwantedColumns(df)
+
+    print(Border)
+    print("Step 3 : Check Missing Values")
     print(Border)
 
     CheckMissingValues(df)
+
+    print(Border)
+    print("Step 4 : Display Statistical Summary")
     print(Border)
 
     DisplayStatisticalSummary(df)
+
+    print(Border)
+    print("Step 5 : Display Class Distribution")
     print(Border)
 
     DisplayClassDistribution(df)
+
+    print(Border)
+    print("Step 6 : Encode Target Variable")
     print(Border)
 
     df, le = EncodeTargetVariable(df)
 
+    print(Border)
+    print("Step 7 : Prepare Features and Target")
+    print(Border)
+
     X, Y = PrepareData(df)
 
-    X_train, X_test, Y_train, Y_test = SplitData(X, Y) 
+    print(Border)
+    print("Step 8 : Split Dataset")
+    print(Border)
+
+    X_train, X_test, Y_train, Y_test = SplitData(X, Y)
+
+    print(Border)
+    print("Step 9 : Train KNN Model")
+    print(Border)
 
     KNNModel = TrainKNNModel(X_train, Y_train)
+
+    print(Border)
+    print("Step 10 : Train Decision Tree Model")
     print(Border)
 
     DTModel = TrainDecisionTreeModel(X_train, Y_train)
+
+    print(Border)
+    print("Step 11 : Compare Models")
     print(Border)
 
     CompareModels(
@@ -412,14 +449,17 @@ def main():
         le
     )
 
+    print(Border)
+    print("Step 12 : Display Graphs")
+    print(Border) 
+
     DisplayGraphs(
-    KNNModel,
-    DTModel,
-    X_test,
-    Y_test
+        KNNModel,
+        DTModel,
+        X_test,
+        Y_test
     )
 
-    print()
     DisplayFooter()
 
 if __name__ == "__main__":
