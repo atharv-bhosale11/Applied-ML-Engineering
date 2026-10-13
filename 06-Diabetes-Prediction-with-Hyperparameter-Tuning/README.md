@@ -1,14 +1,14 @@
-# Diabetes Prediction with Hyperparameter Tuning
+# 🩺 Diabetes Prediction with Hyperparameter Tuning
 
-A machine learning project that predicts diabetes using medical diagnostic features. The project implements multiple classification algorithms, performs hyperparameter optimization using GridSearchCV, compares model performance through cross-validation, and evaluates the selected model on a separate test dataset.
+A machine learning project that predicts diabetes using medical diagnostic features. This project implements multiple classification algorithms, performs hyperparameter optimization using GridSearchCV, compares model performance through cross-validation, and evaluates the selected model on a separate test dataset.
 
-## Project Overview
+## 📌 Project Overview
 
 The objective of this project is to develop and compare machine learning classification models for diabetes prediction.
 
 Five classification algorithms are evaluated to identify the model with the highest mean cross-validation accuracy. The selected model is then evaluated using standard classification metrics and saved for future use.
 
-## Objectives
+## 🎯 Project Objectives
 
 - Analyze and preprocess the diabetes dataset.
 - Handle invalid zero values in selected medical measurement features.
@@ -20,7 +20,7 @@ Five classification algorithms are evaluated to identify the model with the high
 - Visualize algorithm comparison and confusion matrix results.
 - Save the trained model for future predictions.
 
-## Dataset Information
+## 📊 Dataset Information
 
 | Property | Description |
 |---|---|
@@ -31,7 +31,7 @@ Five classification algorithms are evaluated to identify the model with the high
 | Target Variable | `Outcome` |
 | Problem Type | Binary Classification |
 
-### Input Features
+### 🔍 Input Features
 
 | Feature | Description |
 |---|---|
@@ -44,16 +44,16 @@ Five classification algorithms are evaluated to identify the model with the high
 | `DiabetesPedigreeFunction` | Diabetes pedigree function value |
 | `Age` | Age of the individual |
 
-### Target Variable
+### 🎯 Target Variable
 
 The `Outcome` column represents the target class:
 
 - `0` — No diabetes
 - `1` — Diabetes
 
-## Machine Learning Algorithms
+## 🤖 Machine Learning Algorithms
 
-The following algorithms are implemented and compared:
+The following classification algorithms are implemented and compared:
 
 1. Logistic Regression
 2. Decision Tree
@@ -61,7 +61,7 @@ The following algorithms are implemented and compared:
 4. K-Nearest Neighbors (KNN)
 5. Support Vector Machine (SVM)
 
-## Technologies and Libraries
+## 🛠️ Technologies and Libraries
 
 - **Programming Language:** Python
 - **Data Manipulation:** Pandas, NumPy
@@ -69,7 +69,7 @@ The following algorithms are implemented and compared:
 - **Data Visualization:** Matplotlib
 - **Model Serialization:** Joblib
 
-## Machine Learning Workflow
+## ⚙️ Machine Learning Workflow
 
 1. Load and inspect the dataset.
 2. Analyze missing values, duplicate records, and statistical information.
@@ -85,7 +85,7 @@ The following algorithms are implemented and compared:
 12. Generate comparison visualizations and a confusion matrix.
 13. Save the selected model for future predictions.
 
-## Model Optimization
+## 🎛️ Model Optimization
 
 Hyperparameter tuning is performed using `GridSearchCV` with stratified 5-fold cross-validation.
 
@@ -93,7 +93,7 @@ The best-performing model is selected according to its mean cross-validation acc
 
 The held-out test dataset is used separately to evaluate the selected model's performance on unseen data.
 
-## Evaluation Metrics
+## 📈 Evaluation Metrics
 
 The selected model is evaluated using:
 
@@ -106,13 +106,13 @@ The selected model is evaluated using:
 
 These metrics provide different perspectives on classification performance, including overall correctness and the identification of positive and negative cases.
 
-## Project Structure
+## 📁 Project Structure
 
 ```text
 06-Diabetes-Prediction-with-Hyperparameter-Tuning/
 │
 ├── src/
-│   ├── DiabetesPrediction.py
+│   ├── diabetesprediction.py
 │   └── README.md
 │
 ├── data/
