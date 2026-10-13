@@ -1,10 +1,10 @@
 """
-------------------------------------------------------------
+----------------------------------------------------------------------
 Project Name        : Diabetes Prediction with Hyperparameter Tuning
 
 Dataset Information :
 
-Dataset File        : diabetes.csv
+Dataset File        : diabetes.csv 
 
 Target Variable     : Outcome
 
@@ -45,7 +45,7 @@ Evaluation Metrics  : Accuracy Score
 Author              : Atharv Tushar Bhosale
 
 Date                : 13/10/2026
-------------------------------------------------------------
+----------------------------------------------------------------------
 """
 
 import os
