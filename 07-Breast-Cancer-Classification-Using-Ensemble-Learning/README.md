@@ -60,7 +60,8 @@ The project includes data preparation, preprocessing, model training, evaluation
 ├── results/
 │   ├── Model_Comparison.csv
 │   └── README.md
-│
+|── requirments.txt
+|   
 ├── screenshots/
 │   ├── output 1.png
 │   ├── output 2.png
