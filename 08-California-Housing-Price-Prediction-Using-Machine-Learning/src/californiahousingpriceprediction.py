@@ -1,7 +1,7 @@
 """
 ----------------------------------------------------------------------
 Project Name        : California Housing Price Prediction Using Machine Learning
-Dataset File        : california_housing.csv
+Dataset File        : california_housing.csv 
 Target Variable     : target
 Algorithms Used     : Linear Regression, Ridge Regression, Lasso Regression,
                       Support Vector Regression (SVR), Decision Tree Regressor,
