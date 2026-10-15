@@ -1,7 +1,7 @@
 # 🏡 California Housing Price Prediction — Dataset
 
 ## 📌 Dataset Overview
-
+ 
 This dataset contains information about housing districts in California. It includes demographic and housing-related features that can be used to predict the median house value.
 
 The dataset is used in the **California Housing Price Prediction Using Machine Learning** project to train and evaluate regression models.
