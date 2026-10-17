@@ -1,0 +1,4 @@
+Technique,Average_Precision
+SMOTE,0.6729777730657484
+Class Weights,0.6719353842869054
+Undersampling,0.6199608007899894
