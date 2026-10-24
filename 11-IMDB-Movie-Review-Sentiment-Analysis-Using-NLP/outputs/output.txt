@@ -1,0 +1,541 @@
+C:\Users\ATHARV\OneDrive\Desktop\Python\Machine_Learning>python IMD_SentimentAnalysis.py
+
+============================================================
+       IMDB MOVIE REVIEW SENTIMENT ANALYSIS
+          USING NLP AND MACHINE LEARNING
+============================================================
+Project  : Sentiment Classification
+Dataset  : IMDB Dataset of 50K Movie Reviews
+Author   : Atharv Tushar Bhosale
+Language : Python
+============================================================
+============================================================
+IMDB SENTIMENT ANALYSIS PROJECT SETUP
+============================================================
+Base Directory : C:\Users\ATHARV\OneDrive\Desktop\Python\Machine_Learning
+Dataset Path   : C:\Users\ATHARV\OneDrive\Desktop\Python\Machine_Learning\IMDB_Dataset.csv
+Images Folder  : C:\Users\ATHARV\OneDrive\Desktop\Python\Machine_Learning\images
+Models Folder  : C:\Users\ATHARV\OneDrive\Desktop\Python\Machine_Learning\models
+Results Folder : C:\Users\ATHARV\OneDrive\Desktop\Python\Machine_Learning\results
+============================================================
+Project setup completed successfully.
+============================================================
+============================================================
+STEP 1 : IMDB DATASET LOADED SUCCESSFULLY
+============================================================
+Dataset Path : C:\Users\ATHARV\OneDrive\Desktop\Python\Machine_Learning\IMDB_Dataset.csv
+Total Records: 50000
+============================================================
+STEP 2 : UNDERSTANDING THE IMDB DATASET
+============================================================
+
+Dataset Shape: (50000, 2)
+
+Column Names:
+['review', 'sentiment']
+
+Dataset Information:
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 50000 entries, 0 to 49999
+Data columns (total 2 columns):
+ #   Column     Non-Null Count  Dtype
+---  ------     --------------  -----
+ 0   review     50000 non-null  object
+ 1   sentiment  50000 non-null  object
+dtypes: object(2)
+memory usage: 781.4+ KB
+
+Missing Values:
+review       0
+sentiment    0
+dtype: int64
+
+First Five Records:
+                                              review sentiment
+0  One of the other reviewers has mentioned that ...  positive
+1  A wonderful little production. <br /><br />The...  positive
+2  I thought this was a wonderful way to spend ti...  positive
+3  Basically there's a family where a little boy ...  negative
+4  Petter Mattei's "Love in the Time of Money" is...  positive
+
+Random Five Records:
+                                                  review sentiment
+33553  I really liked this Summerslam due to the look...  positive
+9427   Not many television shows appeal to quite as m...  positive
+199    The film quickly gets to a major chase scene w...  negative
+12447  Jane Austen would definitely approve of this o...  positive
+39489  Expectations were somewhat high for me when I ...  negative
+============================================================
+STEP 3 : CHECKING DATASET STRUCTURE
+============================================================
+
+Required Columns:
+review: Available
+sentiment: Available
+
+Data Types:
+review       object
+sentiment    object
+dtype: object
+
+Missing Values:
+review       0
+sentiment    0
+dtype: int64
+
+Duplicate Rows: 418
+
+Unique Sentiment Labels:
+sentiment
+positive    25000
+negative    25000
+Name: count, dtype: int64
+============================================================
+STEP 4 : CLEANING THE IMDB DATASET
+============================================================
+Initial Records : 50000
+Final Records   : 49582
+Removed Records : 418
+
+Missing Values After Cleaning:
+review       0
+sentiment    0
+dtype: int64
+
+Sentiment Labels After Cleaning:
+sentiment
+positive    24884
+negative    24698
+Name: count, dtype: int64
+============================================================
+DATASET CLEANING COMPLETED
+============================================================
+============================================================
+STEP 5 : SENTIMENT DISTRIBUTION ANALYSIS
+============================================================
+
+Sentiment Counts:
+sentiment
+positive    24884
+negative    24698
+Name: count, dtype: int64
+
+Sentiment Percentages:
+sentiment
+positive    50.19
+negative    49.81
+Name: proportion, dtype: float64
+
+Chart saved to: C:\Users\ATHARV\OneDrive\Desktop\Python\Machine_Learning\images\sentiment_distribution.png
+============================================================
+============================================================
+STEP 6 : REVIEW LENGTH ANALYSIS
+============================================================
+
+Review Length Statistics:
+count    49582.000000
+mean       231.350167
+std        171.542020
+min          4.000000
+25%        126.000000
+50%        173.000000
+75%        281.000000
+max       2470.000000
+Name: review_length, dtype: float64
+
+Average Review Length by Sentiment:
+sentiment
+negative    229.60
+positive    233.09
+Name: review_length, dtype: float64
+
+Chart saved to: C:\Users\ATHARV\OneDrive\Desktop\Python\Machine_Learning\images\review_length_distribution.png
+============================================================
+============================================================
+STEP 7 : EXPLORING COMMON WORDS
+============================================================
+
+Top 20 Words in Positive Reviews:
+ word  frequency
+  the     325111
+  and     170782
+    a     160440
+   of     150236
+   to     129177
+   is     108654
+   in      95343
+    i      66516
+   it      64530
+ this      63902
+ that      63643
+   as      49184
+/><br      48800
+ with      44273
+  for      42681
+  was      42145
+  but      37886
+  his      33237
+   on      31337
+ film      29275
+Chart saved to: C:\Users\ATHARV\OneDrive\Desktop\Python\Machine_Learning\images\common_words_positive.png
+
+Top 20 Words in Negative Reviews:
+ word  frequency
+  the     308870
+    a     153968
+  and     140596
+   of     134372
+   to     133422
+   is      94834
+   in      83144
+    i      73877
+ this      73496
+ that      65536
+   it      64125
+/><br      51411
+  was      50349
+  for      41199
+ with      39677
+  but      39384
+   as      38408
+movie      34459
+   on      31067
+ have      29915
+Chart saved to: C:\Users\ATHARV\OneDrive\Desktop\Python\Machine_Learning\images\common_words_negative.png
+============================================================
+============================================================
+STEP 8 : PREPROCESSING MOVIE REVIEWS
+============================================================
+
+Original Review:
+One of the other reviewers has mentioned that after watching just 1 Oz episode you'll be hooked. They are right, as this is exactly what happened with me.<br /><br />The first thing that struck me about Oz was its brutality and unflinching scenes of violence, which set in right from the word GO. Trust me, this is not a show for the faint hearted or timid. This show pulls no punches with regards to drugs, sex or violence. Its is hardcore, in the classic use of the word.<br /><br />It is called OZ as that is the nickname given to the Oswald Maximum Security State Penitentary. It focuses mainly on Emerald City, an experimental section of the prison where all the cells have glass fronts and face inwards, so privacy is not high on the agenda. Em City is home to many..Aryans, Muslims, gangstas, Latinos, Christians, Italians, Irish and more....so scuffles, death stares, dodgy dealings and shady agreements are never far away.<br /><br />I would say the main appeal of the show is due to the fact that it goes where other shows wouldn't dare. Forget pretty pictures painted for mainstream audiences, forget charm, forget romance...OZ doesn't mess around. The first episode I ever saw struck me as so nasty it was surreal, I couldn't say I was ready for it, but as I watched more, I developed a taste for Oz, and got accustomed to the high levels of graphic violence. Not just violence, but injustice (crooked guards who'll be sold out for a nickel, inmates who'll kill on order and get away with it, well mannered, middle class inmates being turned into prison bitches due to their lack of street skills or prison experience) Watching Oz, you may become comfortable with what is uncomfortable viewing....thats if you can get in touch with your darker side.
+
+Cleaned Review:
+one of the other reviewers has mentioned that after watching just oz episode you ll be hooked they are right as this is exactly what happened with me the first thing that struck me about oz was its brutality and unflinching scenes of violence which set in right from the word go trust me this is not a show for the faint hearted or timid this show pulls no punches with regards to drugs sex or violence its is hardcore in the classic use of the word it is called oz as that is the nickname given to the oswald maximum security state penitentary it focuses mainly on emerald city an experimental section of the prison where all the cells have glass fronts and face inwards so privacy is not high on the agenda em city is home to many aryans muslims gangstas latinos christians italians irish and more so scuffles death stares dodgy dealings and shady agreements are never far away i would say the main appeal of the show is due to the fact that it goes where other shows wouldn t dare forget pretty pictures painted for mainstream audiences forget charm forget romance oz doesn t mess around the first episode i ever saw struck me as so nasty it was surreal i couldn t say i was ready for it but as i watched more i developed a taste for oz and got accustomed to the high levels of graphic violence not just violence but injustice crooked guards who ll be sold out for a nickel inmates who ll kill on order and get away with it well mannered middle class inmates being turned into prison bitches due to their lack of street skills or prison experience watching oz you may become comfortable with what is uncomfortable viewing thats if you can get in touch with your darker side
+
+Total Reviews Preprocessed: 49582
+============================================================
+REVIEW PREPROCESSING COMPLETED
+============================================================
+============================================================
+STEP 9 : ENCODING SENTIMENT LABELS
+============================================================
+
+Sentiment Mapping:
+{'negative': 0, 'positive': 1}
+
+Encoded Sentiment Counts:
+sentiment_encoded
+0    24698
+1    24884
+Name: count, dtype: int64
+
+Sample Encoded Labels:
+  sentiment  sentiment_encoded
+0  positive                  1
+1  positive                  1
+2  positive                  1
+3  negative                  0
+4  positive                  1
+============================================================
+SENTIMENT LABEL ENCODING COMPLETED
+============================================================
+============================================================
+STEP 10 : CREATING TEXT FEATURES
+============================================================
+
+Bag of Words Feature Shape: (49582, 10000)
+TF-IDF Feature Shape      : (49582, 10000)
+Target Labels Shape      : (49582,)
+
+Number of Bag of Words Features: 10000
+Number of TF-IDF Features      : 10000
+============================================================
+TEXT FEATURE CREATION COMPLETED
+============================================================
+============================================================
+STEP 11 : SPLITTING DATA INTO TRAINING AND TESTING SETS
+============================================================
+
+Total Records : 49582
+Training Records: 39665
+Testing Records : 9917
+
+Training Sentiment Distribution:
+sentiment_encoded
+0    19758
+1    19907
+Name: count, dtype: int64
+
+Testing Sentiment Distribution:
+sentiment_encoded
+0    4940
+1    4977
+Name: count, dtype: int64
+============================================================
+DATA SPLITTING COMPLETED
+============================================================
+============================================================
+STEP 12 : BUILDING BASELINE MODEL
+============================================================
+
+Baseline Model: DummyClassifier
+Strategy      : most_frequent
+Baseline Accuracy: 0.5019
+
+Classification Report:
+              precision    recall  f1-score   support
+
+    Negative       0.00      0.00      0.00      4940
+    Positive       0.50      1.00      0.67      4977
+
+    accuracy                           0.50      9917
+   macro avg       0.25      0.50      0.33      9917
+weighted avg       0.25      0.50      0.34      9917
+
+============================================================
+BASELINE MODEL EVALUATION COMPLETED
+============================================================
+============================================================
+STEP 13 : CREATING MODEL PIPELINES
+============================================================
+
+Available Model Pipelines:
+- Naive Bayes
+- Logistic Regression
+- Linear SVM
+
+Each pipeline includes:
+1. TF-IDF text vectorization
+2. A sentiment classification algorithm
+============================================================
+MODEL PIPELINES CREATED SUCCESSFULLY
+============================================================
+============================================================
+STEP 14 : COMPARING MACHINE LEARNING MODELS
+============================================================
+
+Training Model: Naive Bayes
+Mean CV Accuracy: 0.8564
+Test Accuracy   : 0.8563
+Precision       : 0.8597
+Recall          : 0.8529
+F1 Score        : 0.8563
+
+Training Model: Logistic Regression
+Mean CV Accuracy: 0.8920
+Test Accuracy   : 0.8947
+Precision       : 0.8860
+Recall          : 0.9070
+F1 Score        : 0.8963
+
+Training Model: Linear SVM
+Mean CV Accuracy: 0.8883
+Test Accuracy   : 0.8927
+Precision       : 0.8890
+Recall          : 0.8983
+F1 Score        : 0.8937
+
+MODEL COMPARISON RESULTS
+              Model  CV Mean Accuracy   CV Std  Test Accuracy  Precision   Recall  F1 Score
+Logistic Regression          0.892046 0.002828       0.894726   0.885967 0.906972  0.896346
+         Linear SVM          0.888315 0.001651       0.892709   0.889044 0.898332  0.893664
+        Naive Bayes          0.856423 0.001777       0.856307   0.859660 0.852923  0.856278
+============================================================
+MODEL COMPARISON COMPLETED
+============================================================
+============================================================
+STEP 15 : SELECTING THE BEST MODEL
+============================================================
+
+Best Model Name: Logistic Regression
+Best F1-Score  : 0.8963
+
+Best Model Performance:
+              Model  CV Mean Accuracy   CV Std  Test Accuracy  Precision   Recall  F1 Score
+Logistic Regression          0.892046 0.002828       0.894726   0.885967 0.906972  0.896346
+============================================================
+BEST MODEL SELECTED SUCCESSFULLY
+============================================================
+============================================================
+STEP 16 : TUNING THE BEST MODEL
+============================================================
+Fitting 5 folds for each of 12 candidates, totalling 60 fits
+
+Best Model: Logistic Regression
+Best Cross-Validation F1-Score: 0.9047
+
+Best Hyperparameters:
+{'classifier__C': 10.0, 'tfidf__max_features': 20000, 'tfidf__ngram_range': (1, 2)}
+============================================================
+HYPERPARAMETER TUNING COMPLETED
+============================================================
+============================================================
+STEP 17 : TRAINING FINAL SENTIMENT MODEL
+============================================================
+
+Final Model Training Completed Successfully.
+Training Records: 39665
+
+Pipeline Steps:
+- tfidf: TfidfVectorizer
+- classifier: LogisticRegression
+============================================================
+============================================================
+STEP 18 : FINAL MODEL EVALUATION
+============================================================
+
+Accuracy  : 0.9051
+Precision : 0.8996
+Recall    : 0.9128
+F1-Score  : 0.9062
+
+Classification Report:
+              precision    recall  f1-score   support
+
+    Negative       0.91      0.90      0.90      4940
+    Positive       0.90      0.91      0.91      4977
+
+    accuracy                           0.91      9917
+   macro avg       0.91      0.91      0.91      9917
+weighted avg       0.91      0.91      0.91      9917
+
+============================================================
+MODEL EVALUATION COMPLETED
+============================================================
+============================================================
+STEP 19 : ANALYZING MISCLASSIFIED REVIEWS
+============================================================
+
+Total Testing Reviews: 9917
+Misclassified Reviews: 941
+Error Percentage: 9.49%
+
+Sample Misclassified Reviews:
+
+Review:
+despite being a huge fan of fred astaire and ginger rogers movies it wasn t until about years ago that i first saw follow the fleet i knew all the songs from an old astaire rogers record yes vinyl but knew nothing of the plot unfortunately while the songs are catchy and ginger rogers character is sweet and funny you just can t like bake baker while trying to make up to his longtime partner he continually sabotages her career his character doesn t have the usual humour and elan of the other films
+Actual Sentiment   : negative
+Predicted Sentiment: positive
+------------------------------------------------------------
+
+Review:
+i know that full moon or any other film studio for that matter could never recapture the fun and cheesy sci fi feeling that was the original trancers and with the last two entries in the series having jack deth in medieval times instead of futuristic los angeles it became quite obvious that there really was little hope in reviving the trancers series breathing new life into a film is one thing but taking our main character out of his element and putting him into the past well it didn t work so n
+Actual Sentiment   : negative
+Predicted Sentiment: positive
+------------------------------------------------------------
+
+Review:
+well well roeg touched a bit of a nerve there didn t he he was a genius while he was cataloguing his various characters descents into psychosis for a couple of decades but as soon as he has the bad taste to suggest that redemption or even some good advice might be found in the bad old catholic church the hipper than thou alternative movie crowd gets extra vicious worse still theresa russell s character faced with experiences that nothing in her avowedly rationalist outlook has an explanation for
+Actual Sentiment   : positive
+Predicted Sentiment: negative
+------------------------------------------------------------
+
+Review:
+ok let me again admit that i haven t seen any other merchant ivory the distributor films nor have i seen more celebrated works by the director so my capacity to discuss before the rains outside of analysis of the film itself is mitigated with that admittance let me begin before the rains is a different kind of movie that doesn t know which genre it wants to be at first it pretends to be a romance in most romances the protagonist falls in love with a supporting character is separated from the sup
+Actual Sentiment   : negative
+Predicted Sentiment: positive
+------------------------------------------------------------
+
+Review:
+i m not here to tell you armored is kubrickian hitchcockian or fellini esquire nope referenced directors are more like don siegel charlie varrick and walter hill the warriors those two helmers didn t fool around with niceties like putting women in their movies no skirts need apply they unapologetically made guy movies guns lots of guns men met violent death with a twitch of the jaw their movies were like a sap to the head you want a friend get a dog armored is so a guy movie dueling armored truc
+Actual Sentiment   : positive
+Predicted Sentiment: negative
+------------------------------------------------------------
+============================================================
+ERROR ANALYSIS COMPLETED
+============================================================
+============================================================
+STEP 20 : PLOTTING MODEL RESULTS
+============================================================
+
+Confusion Matrix Saved To: C:\Users\ATHARV\OneDrive\Desktop\Python\Machine_Learning\images\confusion_matrix.png
+Metrics Chart Saved To   : C:\Users\ATHARV\OneDrive\Desktop\Python\Machine_Learning\images\model_evaluation_metrics.png
+============================================================
+MODEL RESULT VISUALIZATION COMPLETED
+============================================================
+============================================================
+STEP 21 : MOVIE REVIEW SENTIMENT PREDICTION
+============================================================
+
+Original Review:
+This movie was amazing, with excellent acting and a great story!
+
+Cleaned Review:
+this movie was amazing with excellent acting and a great story
+
+Predicted Sentiment: Positive
+============================================================
+============================================================
+STEP 22 : SAVING FINAL SENTIMENT MODEL
+============================================================
+
+Model saved successfully.
+Model Path: C:\Users\ATHARV\OneDrive\Desktop\Python\Machine_Learning\models\sentiment_model.joblib
+============================================================
+============================================================
+STEP 23 : SAVING PROJECT OUTPUTS
+============================================================
+
+Evaluation metrics saved to: C:\Users\ATHARV\OneDrive\Desktop\Python\Machine_Learning\results\evaluation_metrics.csv
+Model comparison saved to: C:\Users\ATHARV\OneDrive\Desktop\Python\Machine_Learning\results\model_comparison.csv
+Misclassified reviews saved to: C:\Users\ATHARV\OneDrive\Desktop\Python\Machine_Learning\results\misclassified_reviews.csv
+============================================================
+PROJECT OUTPUTS SAVED SUCCESSFULLY
+============================================================
+
+============================================================
+ STEP 24 : IMDB SENTIMENT ANALYSIS - PROJECT SUMMARY
+============================================================
+
+DATASET SUMMARY
+------------------------------------------------------------
+Total Reviews       : 49582
+Positive Reviews    : 24884
+Negative Reviews    : 24698
+
+MODEL SUMMARY
+------------------------------------------------------------
+Selected Model      : Logistic Regression
+
+FINAL EVALUATION METRICS
+------------------------------------------------------------
+Accuracy            : 0.9051
+Precision           : 0.8996
+Recall              : 0.9128
+F1 Score            : 0.9062
+
+PROJECT OUTPUTS
+------------------------------------------------------------
+Trained Model       : C:\Users\ATHARV\OneDrive\Desktop\Python\Machine_Learning\models\sentiment_model.joblib
+Images Directory    : C:\Users\ATHARV\OneDrive\Desktop\Python\Machine_Learning\images
+Results Directory   : C:\Users\ATHARV\OneDrive\Desktop\Python\Machine_Learning\results
+
+PROJECT STATUS: COMPLETED
+============================================================
+
+============================================================
+IMDB MOVIE REVIEW SENTIMENT ANALYSIS
+============================================================
+
+Project completed successfully!
+
+Technologies Used:
+- Python
+- Pandas and NumPy
+- Matplotlib and Seaborn
+- Natural Language Processing (NLP)
+- Scikit-learn
+- Joblib
+
+Key Project Steps:
+- Dataset exploration and cleaning
+- Text preprocessing and feature extraction
+- Machine learning model comparison
+- Hyperparameter tuning and evaluation
+- Sentiment prediction and result saving
+
+Author: Atharv Tushar Bhosale
+============================================================
+THANK YOU FOR RUNNING THIS PROJECT!
+============================================================
