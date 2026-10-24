@@ -3,7 +3,7 @@
 ## 📌 Project Overview
 
 This project implements a sentiment analysis system that classifies IMDB movie reviews as **positive** or **negative** using Natural Language Processing (NLP) and Machine Learning.
-
+ 
 The project uses the IMDB Dataset of 50,000 Movie Reviews to explore review text, preprocess textual data, train and compare classification algorithms, evaluate model performance, and predict the sentiment of new reviews.
 
 ## 🎯 Objectives
